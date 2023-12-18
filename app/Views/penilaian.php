@@ -109,6 +109,7 @@
                                     <th>Teknik Pukulan</th>
                                     <th>Teknik Tendangan</th>
                                     <th>Kekuatan Fisik</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -123,6 +124,7 @@
                                         <td><?= $row['teknik_pukulan']; ?></td>
                                         <td><?= $row['teknik_tendangan']; ?></td>
                                         <td><?= $row['kekuatan_fisik']; ?></td>
+                                        <td><a href="/deleteDataPenilaian/<?= $row['id_penilaian']; ?>">Hapus</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

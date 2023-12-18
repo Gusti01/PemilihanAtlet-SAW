@@ -41,4 +41,14 @@ class PesertaController extends BaseController
         session()->setFlashdata('success', 'Data Siswa berhasil ditambahkan.');
         return redirect()->to('/peserta');
     }
+    public function deleteDataPeserta($id)
+    {
+        $pesertaModel = new PesertaModel();
+
+        // Panggil method delete pada model dan berikan ID sebagai parameter
+        $pesertaModel->delete($id);
+
+        // Tambahkan pesan sukses atau redirect ke halaman lain sesuai kebutuhan Anda
+        return redirect()->to('/peserta')->with('success', 'Data deleted successfully');
+    }
 }

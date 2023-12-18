@@ -29,4 +29,15 @@ class SabukController extends BaseController
         session()->setFlashdata('success', 'Data Siswa berhasil ditambahkan.');
         return redirect()->to('/sabuk');
     }
+
+    public function deleteDataSabuk($id)
+    {
+        $sabukModel = new SabukModel();
+
+        // Panggil method delete pada model dan berikan ID sebagai parameter
+        $sabukModel->delete($id);
+
+        // Tambahkan pesan sukses atau redirect ke halaman lain sesuai kebutuhan Anda
+        return redirect()->to('/sabuk')->with('success', 'Data deleted successfully');
+    }
 }

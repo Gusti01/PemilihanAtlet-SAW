@@ -46,5 +46,16 @@ class PenilaianController extends BaseController
         return redirect()->to('/penilaian');
     }
 
+    public function deleteDataPenilaian($id)
+    {
+        $penilaianModel = new PenilaianModel();
+
+        // Panggil method delete pada model dan berikan ID sebagai parameter
+        $penilaianModel->delete($id);
+
+        // Tambahkan pesan sukses atau redirect ke halaman lain sesuai kebutuhan Anda
+        return redirect()->to('/penilaian')->with('success', 'Data deleted successfully');
+    }
+
 
 }

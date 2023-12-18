@@ -1,14 +1,5 @@
 <div class="container mx-auto">
 
-    <?php
-    if (session()->user_id == true) {
-
-        print_r(session()->username);
-    } else {
-        echo "belum";
-    }
-    ?>
-
     <!-- Outer Row -->
     <div class="row d-flex justify-content-center">
 

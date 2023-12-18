@@ -23,7 +23,14 @@ class PesertaModel extends Model
         $query = $this->db->query("SELECT id_peserta, sabuk_karate, nama, usia, alamat, perguruan_karate FROM peserta INNER JOIN sabuk_karate ON peserta.id_sabuk = sabuk_karate.id_sabuk");
         return $query->getResultArray();
     }
-    function insertPeserta($dataPeserta)
+
+    public function countPeserta(){
+        $query = $this->db->query("SELECT COUNT(nama) FROM peserta");
+        return $query->getResultArray();
+    }
+
+
+    public function insertPeserta($dataPeserta)
     {
         return $this->insert($dataPeserta);
     }

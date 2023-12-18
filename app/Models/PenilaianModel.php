@@ -19,16 +19,21 @@ class PenilaianModel extends Model
         'teknik_pukulan',
         'teknik_tendangan',
         'kekuatan_fisik'
-    ];
+    ]; 
 
     function insertPenilaian($penilaianData)
     {
         return $this->insert($penilaianData);
     }
 
+    public function countPenilaian(){
+        $query = $this->db->query("SELECT COUNT(id_penilaian) FROM penilaian");
+        return $query->getResultArray();
+    }
+
     public function getDataPenilaian()
     {
-        $query = $this->db->query("SELECT peserta.id_peserta, nama, umur, sabuk_karate, kedisiplinan, kesehatan, teknik_pukulan, teknik_tendangan, kekuatan_fisik FROM penilaian INNER JOIN peserta ON peserta.id_peserta = penilaian.id_peserta INNER JOIN sabuk_karate ON peserta.id_sabuk = sabuk_karate.id_sabuk");
+        $query = $this->db->query("SELECT id_penilaian, peserta.id_peserta, nama, umur, sabuk_karate, kedisiplinan, kesehatan, teknik_pukulan, teknik_tendangan, kekuatan_fisik FROM penilaian INNER JOIN peserta ON peserta.id_peserta = penilaian.id_peserta INNER JOIN sabuk_karate ON peserta.id_sabuk = sabuk_karate.id_sabuk");
         return $query->getResultArray();
     }
     public function getDataKriteria()

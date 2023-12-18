@@ -41,6 +41,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Sabuk Karate</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,7 @@
                                     <tr>
                                         <td><?= $i++; ?></td>
                                         <td><?= $row['sabuk_karate']; ?></td>
+                                        <td><a href="/deleteDataSabuk/<?= $row['id_sabuk']; ?>">Hapus</a> | <a href="">Edit</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

@@ -91,6 +91,7 @@
                                     <th>Alamat</th>
                                     <th>Perguruan Karate</th>
                                     <th>Sabuk Karate</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -103,6 +104,7 @@
                                         <td><?= $row['alamat']; ?></td>
                                         <td><?= $row['perguruan_karate']; ?></td>
                                         <td><?= $row['sabuk_karate']; ?></td>
+                                        <td><a href="/deleteDataPeserta/<?= $row['id_peserta']; ?>">Hapus</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

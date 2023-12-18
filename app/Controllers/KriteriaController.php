@@ -31,4 +31,14 @@ class KriteriaController extends BaseController
         session()->setFlashdata('success', 'Data Siswa berhasil ditambahkan.');
         return redirect()->to('/kriteria');
     }
+    public function deleteDataKriteria($id)
+    {
+        $kriteriaModel = new KriteriaModel();
+
+        // Panggil method delete pada model dan berikan ID sebagai parameter
+        $kriteriaModel->delete($id);
+
+        // Tambahkan pesan sukses atau redirect ke halaman lain sesuai kebutuhan Anda
+        return redirect()->to('/kriteria')->with('success', 'Data deleted successfully');
+    }
 }

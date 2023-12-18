@@ -50,6 +50,7 @@
                                     <th>No</th>
                                     <th>Nama Kriteria</th>
                                     <th>Bobot</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,6 +60,7 @@
                                         <td><?= $i++; ?></td>
                                         <td><?= $row['nama_kriteria']; ?></td>
                                         <td><?= $row['bobot']; ?></td>
+                                        <td><a href="/deleteDataKriteria/<?= $row['id_kriteria']; ?>">Hapus</a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>

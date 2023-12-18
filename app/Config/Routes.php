@@ -14,6 +14,13 @@ $routes->get('/penilaian', 'PenilaianController::index');
 $routes->post('/login', 'LoginController::login');
 $routes->get('/logout', 'LoginController::logout');
 
+
+
+$routes->get('/deleteDataPeserta/(:num)', 'PesertaController::deleteDataPeserta/$1');
+$routes->get('/deleteDataKriteria/(:num)', 'KriteriaController::deleteDataKriteria/$1');
+$routes->get('/deleteDataPenilaian/(:num)', 'PenilaianController::deleteDataPenilaian/$1');
+$routes->get('/deleteDataSabuk/(:num)', 'SabukController::deleteDataSabuk/$1');
+
 $routes->post('/tambahKriteria', 'KriteriaController::insertDataKriteria');
 $routes->post('/tambahPenilaian', 'PenilaianController::insertDataPenilaian');
 $routes->post('/tambahSabuk', 'SabukController::insertDataSabuk');

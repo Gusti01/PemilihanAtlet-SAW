@@ -20,4 +20,9 @@ class KriteriaModel extends Model
     {
         return $this->insert($kriteriaData);
     }
+
+    public function countRule(){
+        $query = $this->db->query("SELECT COUNT(nama_kriteria) FROM rule");
+        return $query->getResultArray();
+    }
 }
